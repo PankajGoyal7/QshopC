@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="qcProduct">
+<head>
+    <meta charset="utf-8" />
+    <title>Shopclues ProductQc  Login</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+</head>
+<body>
+        <div class="container">
+            <div class="col-lg-4 col-lg-offset-4 " style="margin-top:110px">
+                <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
+                <div ui-view></div>
+            </div>
+        </div>
+   <script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+   <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular/angular-ui-router.js"></script>
+   <script src="lib/angular/angular-route.js"></script>
+   <script src="lib/angular/angular-cookies.js"></script>
+   <script src="js/app.js"></script>
+   <script src="modules/authentication/js/loginController.js"></script>
+   <script src="modules/authentication/js/authenticationService.js"></script>
+   <script src="modules/authentication/js/userService.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+	<h1 class="text-center login-title">Login to Admin Panel</h1>
+	<form class="form-signin" name="loginForm" ng-submit="vm.login()" class="form-horizontal" novalidate role="form">
+		<div ng-show="invalidLogin" class="alert alert-danger">Invalid username/password</div>
+		<div class="form-group" ng-class="{'has-error':loginForm.username.$dirty && loginForm.username.$invalid}">
+			<input type="email" name="username" class="form-control" ng-model="vm.username" ng-required="true" class="form-control" id="title" placeholder="Username" ng-pattern="/^[\w]+[.%+-]*[\w]*@[a-zA-z.-]+\.[a-zA-z]{2,}$/">
+			<span class="error-message" ng-show="loginForm.password.$dirty && loginForm.username.$error.required" style="color:red">Field is required</span>
+			<span class="error-message" ng-show="loginForm.password.$dirty &&loginForm.username.$error.pattern" style="color:red">Emial-Id is invalid</span>
+		</div>
+		<div class="form-group" ng-class="{'has-error':loginForm.password.$dirty && loginForm.password.$invalid}">
+			<input type="password" name="password" class="form-control" ng-model="vm.password" ng-required="true" class="form-control" id="title" placeholder="Password">
+			<span class="error-message" ng-show="loginForm.password.$dirty && loginForm.password.$invalid" style="color:red">Password is required</span>
+		</div>
+
+		<button class="btn btn-lg btn-primary btn-block" type="submit" ng-disabled="loginForm.$invalid">Login</button>
+		<div class="text-center">
+			<a href="register" class="btn btn-link">Forgot Password ?</a>
+		</div>
+	</form>
