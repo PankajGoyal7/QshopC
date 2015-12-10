@@ -1,3 +1,59 @@
-<div>
-dsjfhdjkshfkjsa
+<div id="wrapper">
+  <!-- Sidebar -->
+  <div id="sidebar-wrapper">
+    <ul  class="sidebar-nav nav nav-pills nav-stacked on-click-make-active">
+      <li class="sidebar-brand">
+        <a href="#">
+          Shopclues.com
+        </a>
+      </li>
+      <li ui-sref-active="active"><a ui-sref="admin.users">All Users</a></li>
+      <li ui-sref-active="active"><a ui-sref="admin.autoAssign">Auto Assign</a></li>
+      <li ui-sref-active="active"><a ui-sref="admin.tatSetting">TAT setting</a></li>
+      <li ui-sref-active="active"><a ui-sref="admin.cidReport">Category Base Report</a></li>
+      <li ui-sref-active="active"><a ui-sref="admin.agentReport">Agent Report</a></li>
+      <li ui-sref-active="active"><a ui-sref="admin.dailyReport">Today's Report</a></li>
+      <li ui-sref-active="active"><a ui-sref="admin.pushProducts">Push Product</a></li>
+    </ul>
+  </div>
+  <!-- /#sidebar-wrapper -->
+  <!--Top nav bar-->
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a href="#menu-toggle" class="btn navbar-brand" id="menu-toggle">Toggle</a>
+        <a class="navbar-brand" href="#">Shoplcues.com</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a ui-sref="login">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+        </div>
+      </div>
+      <div ui-view></div>
+    </div>
+  </div>
+  <!-- /#page-content-wrapper -->
+  <script>
+  $("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+  });
+  </script>
 </div>
+
+

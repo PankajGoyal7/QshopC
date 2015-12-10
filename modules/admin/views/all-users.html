@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="table-responsive"> 
+        <table class="table-striped table table-hover table-bordered" ng-controller="UsersController">
+            <tr >
+                <td><h5>Email-Id</h5></td>
+                <td><h5>Name</h5></td>
+                <td><h5>Company</h5></td>
+                <td><h5>Department</h5></td>
+                <td><h5>Status</h5></td>
+                <td><h5>Action</h5></td>
+            </tr>
+            <tr ng-repeat="user in users | orderBy:'user_id'">
+                <td>{{user.email}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.company}}</td>
+                <td>{{user.department}}</td>
+                <td>{{user.status}}</td>
+                <td><a ui-sref="admin.updateuser({id:user.user_id})">{{action}}</a></td>
+            </tr>
+        </table>
+    </div>
+</div>

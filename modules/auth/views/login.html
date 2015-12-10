@@ -1,0 +1,27 @@
+<div class="login-page">
+	<div class="row">
+		<div class="col-md-4 col-lg-4 col-md-offset-4 col-lg-offset-4">
+			<img src="images/flat-avatar.png" class="user-avatar" />
+			<h1>Shopclues <small></small></h1>
+			<form class="form-signin" name="loginForm" ng-submit="login()" class="form-horizontal" novalidate role="form">
+				<div ng-show="invalidLogin" class="alert alert-danger form-content">Invalid username/password</div>
+				<div class="form-group" ng-class="{'has-error':loginForm.username.$dirty && loginForm.username.$invalid}">
+					<input type="email" name="username" class="form-control" ng-model="credentials.username" ng-required="true" class="form-control" id="title" placeholder="Username" ng-pattern="/^[\w]+[.%+-]*[\w]*@[a-zA-z.-]+\.[a-zA-z]{2,}$/">
+					<span class="error-message" ng-show="loginForm.password.$dirty && loginForm.username.$error.required" style="color:red;">Field is required</span>
+					<span class="error-message" ng-show="loginForm.password.$dirty &&loginForm.username.$error.pattern" style="color:red">Emial-Id is invalid</span>
+				</div>
+				<div class="form-group" ng-class="{'has-error':loginForm.password.$dirty && loginForm.password.$invalid}">
+					<input type="password" name="password" class="form-control" ng-model="credentials.password" ng-required="true" class="form-control" id="title" placeholder="Password">
+					<span class="error-message" ng-show="loginForm.password.$dirty && loginForm.password.$invalid" style="color:red">Password is required</span>
+				</div>
+
+				<button class="btn btn-white btn-outline btn-lg btn-rounded" type="submit" ng-disabled="loginForm.$invalid">{{buttonText}}</button>
+				<div class="text-center">
+					<a href="register" class="btn btn-link">Forgot Password ?</a>
+				</div>
+			</form>
+
+		</div>
+	</div>
+
+</div>
