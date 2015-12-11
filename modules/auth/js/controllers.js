@@ -43,19 +43,15 @@ angular.module('qcProduct.auth.controllers',[]).controller('PostCreationControll
 
 }]).controller('LoginController',['$scope','authService','$state',function($scope,authService,$state){
 
-
     $scope.buttonText="Login";
     $scope.login=function(){
         $scope.buttonText="Logging in. . .";
 
         authService.login($scope.credentials.username,$scope.credentials.password).then(function(data){
-            console.log(data);
             var user_type=angular.fromJson(data.text).user_id;
             if(user_type=="1"){
-                console.log('if');
                 $state.go('admin.postViewAll');
             }else{
-                console.log('elese');
                 $state.go('admin.postNew');
             }
            

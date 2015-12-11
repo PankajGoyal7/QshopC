@@ -9,17 +9,18 @@ angular.module('qcProduct.admin.controllers',[]).controller('CategoryReportContr
 }]).controller('DailyReportController',['$scope','$state',function($scope,$state){
     
 
-}]).controller('UsersController',['$scope','$state','$stateParams','userService',function($scope,$state,$stateParams,userService){
-    $scope.action="Edit";
+}]).controller('UsersController',['$scope','$state','userService',function($scope,$state,userService){
+    
+    $scope.buttonLink="Edit";
     $scope.users=userService.allusers();
-    console.log($scope.users);
+    // console.log($scope.users);
     // $scope.user={};
     // $scope.user.email=$scope.users[0].email;
     // $scope.user.company=$scope.users[0].company;
     // $scope.user.status=$scope.users[0].status;
     // $scope.user.department=$scope.users[0].department;
     // $scope.user.name=$scope.users[0].name;
-    $scope.buttonText="Update";
+    // $scope.buttonText="Update";
     // $scope.edit=function(user){
     //     var current_user=angular.fromJson(user);
     //     console.log(current_user);
@@ -47,9 +48,20 @@ angular.module('qcProduct.admin.controllers',[]).controller('CategoryReportContr
 
 }]).controller('AutoAssignController',['$scope','$state',function($scope,$state){
 
-}]).controller('UpdateUserController',['$scope','$state','$controller',function($scope,$state,$controller){
-    // var allusers = $controller('UsersController');
-    // console.log(allusers.users);
+}]).controller('UpdateUserController',['$scope','$state','$stateParams','userService',function($scope,$state,$stateParams,userService){
+
+    $scope.userData=userService.getUserById($stateParams.id);
+    console.log($stateParams.id);
+    $scope.user={};
+    $scope.user.email=$scope.userData.email;
+    $scope.user.company=$scope.userData.company;
+    $scope.user.status=$scope.userData.status;
+    $scope.user.department=$scope.userData.department;
+    $scope.user.name=$scope.userData.name;
+    $scope.buttonText="Update";
+
+}]).controller('NewUserController',['$scope','$state',function($scope,$state){
+    $scope.buttonText="Create";
 }]);
 
 

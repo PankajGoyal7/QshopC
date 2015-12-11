@@ -1,8 +1,6 @@
 'use strict'
 
-angular.module('qcProduct.auth',['qcProduct.auth.controllers','qcProduct.auth.services','qcProduct.admin.controllers']);
-
-angular.module('qcProduct.auth').config(['$stateProvider',function($stateProvider){
+angular.module('qcProduct.auth',[]).config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
     $stateProvider.state('login',{
         url:'/login',
         controller: 'LoginController',
@@ -74,10 +72,20 @@ angular.module('qcProduct.auth').config(['$stateProvider',function($stateProvide
 
     }).state('admin.updateuser',{
         url:'/user/:id/edit',
-        controller: 'UsersController',
+        controller: 'UpdateUserController',
+        templateUrl:'modules/admin/views/user.html'
+
+    }).state('admin.newUser',{
+        url:'/adduser',
+        controller: 'NewUserController',
         templateUrl:'modules/admin/views/user.html'
 
     })
+    $urlRouterProvider.otherwise(function($injector, $location){
+        $injector.invoke(['$state', function($state) {
+            $state.go('login');
+        }]);
+    }); 
 }]).run(['$rootScope','$state','$cookieStore','authService',function($rootScope,$state,$cookieStore,authService){
 
     $rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error) {

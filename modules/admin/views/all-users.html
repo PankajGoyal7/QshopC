@@ -1,5 +1,8 @@
 <div class="row">
-    <div class="table-responsive"> 
+    <div class="link_right">
+        <a ui-sref="admin.newUser" >Add New User</a>
+    </div>
+    <div class="table-responsive "> 
         <table class="table-striped table table-hover table-bordered" ng-controller="UsersController">
             <tr >
                 <td><h5>Email-Id</h5></td>
@@ -15,7 +18,7 @@
                 <td>{{user.company}}</td>
                 <td>{{user.department}}</td>
                 <td>{{user.status}}</td>
-                <td><a ui-sref="admin.updateuser({id:user.user_id})">{{action}}</a></td>
+                <td><a ui-sref="admin.updateuser({id:user.user_id})">{{buttonLink}}</a></td>
             </tr>
         </table>
     </div>
