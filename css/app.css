@@ -94,11 +94,6 @@
     list-style: none;
 }
 
-.sidebar-nav li {
-    /*text-indent: 20px;*/
-    /*line-height: 40px;*/
-}
-
 .sidebar-nav li a {
     display: block;
     text-decoration: none;
@@ -158,7 +153,10 @@
         margin-right: 0;
     }
 }
-
+.sidebar-cross{
+    margin-bottom: 10px;
+    width: 0px;
+}
 
 /* Remove the navbar's default margin-bottom and rounded borders */ 
 .navbar {
@@ -200,8 +198,9 @@ footer {
 }
 .link_right{
     text-align: right;
-    text-indent: 20px;
+    text-indent: 10px;
     line-height: 40px;
     font-weight: bold;
 }
+
 
