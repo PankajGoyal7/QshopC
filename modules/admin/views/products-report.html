@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="table-responsive "> 
+        <table class="table-striped table table-hover table-bordered" ng-controller="ProductReportController">
+            <thead>
+            <tr >
+                <!-- <td><h5>Sr. No.</h5></td> -->
+                <td><h5>Product Id</h5></td>
+                <td><h5>Category Id</h5></td>
+                <td><h5>Merchant Id</h5></td>
+                <td><h5>Product status</h5></td>
+                <td><h5>Check By </h5></td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="product in products | orderBy:'product'">
+
+                <td><a ui-sref="admin.productreport({product_id:product.product_id})">{{product.product_id}}</a></td>
+                <td>{{product.category_id}}</td>
+                <td>{{product.merchant_id}}</td>
+                <td>{{product.status}}</td>
+                <td>{{product.agent}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
